@@ -18,16 +18,14 @@ import UserOutput from './user-output/useroutput';
 class App extends Component {
   state = {
     users: [
-      { username: "Jay" },
-      { username: "Roy" }
+      { username: "Blake" }
     ]
   }
 
   nameChangeHandler = (event) => {
     this.setState( {
       users: [
-        { username: event.target.value },
-        { username: "Roy" }
+        { username: event.target.value }
       ]
     })
   }
@@ -36,11 +34,10 @@ class App extends Component {
     return (
       <div className="App">
         <UserInput
-        changed={this.nameChangeHandler} />
-        <UserOutput
+          changed={this.nameChangeHandler}
           username={this.state.users[0].username} />
         <UserOutput
-          username={this.state.users[1].username} />
+          username={this.state.users[0].username} />
       </div>
     );
   }
